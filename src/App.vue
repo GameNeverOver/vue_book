@@ -1,31 +1,45 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<div id="app">
+    <!-- <read-home></read-home> -->
+    <!-- <read-detail></read-detail> -->
+    <!-- <read-follow></read-follow> -->
+    <!-- <read-reg></read-reg> -->
+    <!-- <read-error></read-error> -->
+    <!-- <read-user></read-user> -->
+
+    <loading v-show="$root.loading"></loading>
+    <router-view></router-view>
+
+    <read-footer></read-footer>
+</div>
 </template>
+<script>
+import ReadFooter from "./common/ReadFooter" ;
+// import ReadError from "./common/ReadError" ;
 
+// import ReadHome from "./components/ReadHome" ;
+// import ReadDetail from "./components/ReadDetail" ;
+// import ReadFollow from "./components/ReadFollow" ;
+// import ReadLogin from "./components/ReadLogin" ;
+// import ReadReg from "./components/ReadReg" ;
+// import ReadUser from "./components/ReadUser" ;
+// html.style.background = "#00f" ;
+
+export default {
+ 
+  components:{
+    ReadFooter,
+    // ReadHome,
+    // ReadDetail,
+    // ReadFollow,
+    // ReadLogin,
+    // ReadReg,
+    // ReadError,
+    // ReadUser
+  }
+}
+</script>
+  
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+ 
 </style>
